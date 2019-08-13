@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<!-- <div class="container">
+
+    <div class="jumbotron py-3">
+      <h2 class="h2 text-center mb-0">Sign Up with us</h2>
+    </div>
+   -->
+
+   <body>
+    <div class="login-dark">
+     
+    <form #signUpForm="ngForm" (ngSubmit)="signUpSubmit(signUpForm)">
+      <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" placeholder="Enter Email" name="email" #email="ngModel" [(ngModel)]="user.email"
+          required>
+        <div class="alert alert-danger" *ngIf="email.dirty && email.invalid">
+          <strong>Oh snap!</strong>
+          Email can't be empty !
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>UserName</label>
+        <input type="text" class="form-control" placeholder="Enter UserName" name="password" #userName="ngModel" [(ngModel)]="user.userName"
+          required>
+        <div class="alert alert-danger" *ngIf="password.dirty && password.invalid">
+          <strong>Oh snap!</strong>
+          UserName can't be empty !
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Enter Password" name="password" #password="ngModel" [(ngModel)]="user.password"
+          required>
+        <div class="alert alert-danger" *ngIf=" password.dirty && password.invalid">
+          <strong>Oh snap!</strong>
+          Password can't be empty !
+        </div>
+      </div>
+      <button class="btn btn-primary  btn-block" type="submit">Sign Up</button>
+      
+      <!-- <button class="btn btn-primary" type="submit" [disabled]="signUpForm.pristine || signUpForm.invalid">Sign Up</button>
+   -->
+ 
+  </form>
+  <div class="alert alert-success mt-3" *ngIf="successFlag">
+    <i class="fas fa-circle-notch fa-spin fa-lg mr-3"></i>
+    <strong>Hang On!</strong> You are being redirected to the home page.
+  </div>
+
+  <div class="alert alert-danger mt-3" *ngIf="errorFlag">
+    <i class="fas fa-exclamation-circle fa-lg mr-3"></i>
+    <strong>Oops!</strong> Couldn't create an account. Please try again !
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+   
+  

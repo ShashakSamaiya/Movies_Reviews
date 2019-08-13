@@ -1,0 +1,34 @@
+
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="irc_mi" src="https://www.iosicongallery.com/icons/moviequest-discover-great-movies-2013-05-22/512.png"
+     onload="typeof google==='object'&amp;amp;google.aft&amp;amp;google.aft(this)" width="3%" height="35"  data-iml="1564827514876">
+    <a class="navbar-brand mb-1 mt-1" routerLink='/' routerLinkActive="active" >MOVIEXPOSE</a>
+    <!-- <a class="navbar-brand mb-1 mt-1"  >MOVIEXPOSE</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor05"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngIf="authService.loginStatus">
+          <a class="nav-link" routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.loginStatus">
+          <a class="nav-link" routerLink='/movies' routerLinkActive="active">Movies</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="!authService.loginStatus">
+          <a class="nav-link" routerLink='/signin' routerLinkActive="active">Sign In</a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.loginStatus">
+          <a class="nav-link" routerLink='/signup' routerLinkActive="active">Sign Up</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.loginStatus">
+          <button class="btn btn-default nav-link" (click)="signOut()">Log Out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>

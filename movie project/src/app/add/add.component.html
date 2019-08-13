@@ -1,0 +1,23 @@
+
+<form class="mb-4" #addForm="ngForm" (ngSubmit)="saveReview(addForm)">
+    <fieldset>
+  
+      <div class="form-group">
+        <h4>Rate Movie</h4>
+        <input type="text" class="form-control" placeholder="enter rating" name="rating" #rating="ngModel" [(ngModel)]="newMovieReview.rating"
+          required>
+          <p class="h6 text-danger mt-2" *ngIf="rating.dirty && rating.invalid">Rating can't be empty</p>
+      </div>
+  
+      <div class="form-group">
+          <h4>Give Review</h4>
+        <textarea class="form-control" rows="2" placeholder="enter review " name="review" #review="ngModel" [(ngModel)]="newMovieReview.review"
+          required>
+        </textarea>
+        <p class="h6 text-danger mt-2" *ngIf="review.dirty && review.invalid">Review can't be empty</p>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+  
+    </fieldset>
+  </form>
